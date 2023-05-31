@@ -1,8 +1,8 @@
 <?php
 
-namespace TripServiceKata\User;
+namespace App\TripServiceKata\User;
 
-use TripServiceKata\Trip\Trip;
+use App\TripServiceKata\Trip\Trip;
 
 class User
 {

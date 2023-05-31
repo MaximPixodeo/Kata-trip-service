@@ -3,7 +3,9 @@
 namespace Test\TripServiceKata\Trip;
 
 use PHPUnit\Framework\TestCase;
-use TripServiceKata\Trip\TripService;
+use App\TripServiceKata\Trip\TripService;
+use App\TripServiceKata\Trip\TripServiceMock;
+use App\TripServiceKata\User\User;
 
 class TripServiceTest extends TestCase
 {
@@ -11,15 +13,17 @@ class TripServiceTest extends TestCase
      * @var TripService
      */
     private $tripService;
+    private $user;
 
-    protected function setUp()
+    protected function setUp() :void
     {
-        $this->tripService = new TripService;
+        $this->tripService = new TripServiceMock;
+        $this->user = new User('Audrey');
     }
 
     /** @test */
     public function it_does_something()
     {
-        $this->fail('This test has not been implemented yet.');
+        $this->assertEquals($this->tripService->getTripsByUser($this->user), array());
     }
 }

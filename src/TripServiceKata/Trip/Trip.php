@@ -1,6 +1,6 @@
 <?php
 
-namespace TripServiceKata\Trip;
+namespace App\TripServiceKata\Trip;
 
 class Trip
 {
