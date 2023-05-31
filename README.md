@@ -1,20 +1,98 @@
-# PHP
+# PHP template project
 
-In order to perform the kata, first of all you will need to install all of the dependencies. This can be done using
-composer (standing from the *"php"* directory")
+My template for PHP project or exercise (Kata)
+
+## Getting started
+
+### Clone the repository
 ```shell
-wget http://getcomposer.org/composer.phar
-php composer.phar install
+git clone https://github.com/klnjmm/template-php.git your-project-name
+cd your-project-name
 ```
 
-Next, to execute the unit tests you need run this from the *php* directory
-```shell
-php bin/phpunit
+### Modify composer.json file
+* General informations like project name, description and license
+```json
+    "name": "klnjmm/template",
+    "description": "My template for PHP project",
+    "type": "project",
+    "license": "MIT",
 ```
 
-## Coverage
+### Init
+#### On Unix or Mac OS X system
+```shell
+make init
+make up
+```
 
-When running the tests a coverage report should be generated automatically in simple text format and html report. If you want
-to visualize it from the browser you can open the `coverage/report/index.html` file in a browser after running the tests.
+#### On Windows
+```shell
+rmdir /s /q .git
+git init
+composer install
+```
 
-Enjoy
+
+Let's code ! 🚀
+
+## Developing
+
+### On Unix or Mac OS X system
+Here a few commands that can help you :
+
+* Launch unit tests
+```shell
+make unit-tests
+```
+
+* Launch unit tests with coverage
+```shell
+make unit-tests-coverage
+```
+
+* Launch mutation testing
+```shell
+make mutation
+```
+
+* Launch code sniffer
+```
+make code-sniffer
+```
+
+* Fix code style
+```
+make code-sniffer-fix
+```
+
+### On Windows
+Here a few commands that can help you :
+
+* Launch unit tests
+```shell
+vendor\bin\pest.bat
+```
+
+* Launch unit tests with coverage
+```shell
+vendor\bin\pest.bat --coverage
+```
+
+* Launch mutation testing (doesn't work on windows...)
+```shell
+vendor\bin\infection.bat --test-framework=pest --show-mutations
+```
+
+* Launch code sniffer
+```
+vendor\bin\phpcs.bat
+```
+
+* Launch code sniffer
+```
+vendor\bin\phpcbf.bat
+```
+
+## Licensing
+Do whatever you want with this !
