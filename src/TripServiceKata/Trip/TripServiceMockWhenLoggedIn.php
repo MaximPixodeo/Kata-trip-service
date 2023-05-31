@@ -7,10 +7,15 @@ use App\TripServiceKata\User\UserSession;
 use App\TripServiceKata\Trip\TripService;
 use App\TripServiceKata\Exception\UserNotLoggedInException;
 
-class TripServiceMock extends TripService
+class TripServiceMockWhenLoggedIn extends TripService
 {
-    public function getLoggedUser() 
+    public function getLoggedUser()
     {
-        return true;
+        return new User('Maksim');
+    }
+
+    public function findTripsByUser($user)
+    {
+        return array();
     }
 }
