@@ -3,23 +3,17 @@
 namespace App\TripServiceKata\User;
 
 use App\TripServiceKata\Trip\Trip;
+use App\TripServiceKata\Trip\TripDAO;
 
 class User
 {
-    private $trips;
     private $friends;
     private $name;
 
     public function __construct($name)
     {
         $this->name = $name;
-        $this->trips = array();
         $this->friends = array();
-    }
-
-    public function getTrips()
-    {
-        return $this->trips;
     }
 
     public function getFriends()
@@ -32,8 +26,14 @@ class User
         $this->friends[] = $user;
     }
 
-    public function addTrip(Trip $trip)
+
+    public function getLoggedUser()
     {
-        $this->trips[] = $trip;
+        return UserSession::getInstance()->getLoggedUser();
+    }
+
+    public function findTripsByUser(User $user)
+    {
+        return TripDAO::findTripsByUser($user);
     }
 }
